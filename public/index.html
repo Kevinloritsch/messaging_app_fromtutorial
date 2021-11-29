@@ -32,14 +32,22 @@
 					</div>
 					<div class="form-control">
 						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="Java">Java</option>
-							<option value="Python">Python</option>
-							<option value="C++">C++</option>
-							<option value="Ruby">Ruby</option>
-							<option value="JavaScript">JavaScript</option>
-							<option value="HTML">HTML</option>
-						</select>
+						<input
+							type="text"
+							name="room"
+							id="room"
+							placeholder="Enter room code..."
+							required
+						/>
+						<p>&nbsp;</p>
+						<button onclick="myFunction()">Click for a random room code:</button>
+						<p id="codenum"></p>
+						<script>
+							function myFunction() {
+								let randnum = Math.random().toString(36).substr(2, 25);
+							  document.getElementById("codenum").innerHTML = `${randnum}`;
+							}
+						</script>
 					</div>
 					<button type="submit" class="btn">Join Chat</button>
 				</form>
